@@ -3,30 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Мой сайт{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Подбор автомобилей</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Дополнительные стили (если нужно) */
+        body {
+            padding-top: 56px; /* Отступ для фиксированного навигационного меню */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Мой сайт</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Главная</a></li>
-                <li><a href="{{ url_for('about') }}">О нас</a></li>
-                <!-- Удалили строку ниже, если не нужно -->
-                <!-- <li><a href="{{ url_for('blog') }}">Блог</a></li> -->
-                <li><a href="{{ url_for('contacts') }}">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Навигационное меню -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Подбор автомобилей</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Блог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        {% block content %}
-        {% endblock %}
+    <!-- Основной контент -->
+    <main role="main" class="container mt-5">
+        <h1 class="mt-4">Добро пожаловать на наш сайт!</h1>
+        <p>Мы предлагаем лучший выбор автомобилей для вашего удобства. Наша команда экспертов поможет вам с выбором.</p>
+
+        <h2 class="mt-5">Почему выбирают нас?</h2>
+        <ul>
+            <li>Большой ассортимент автомобилей</li>
+            <li>Подбор по вашим критериям</li>
+            <li>Консультации по телефону и на сайте</li>
+        </ul>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Наша компания</p>
+    <!-- Футер -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>О нас</h5>
+                    <p>Мы предлагаем лучший выбор автомобилей для вашего удобства. Наша команда экспертов поможет вам с выбором.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Контакты</h5>
+                    <p>
+                        <strong>Телефон:</strong> +7 (123) 456-78-90<br>
+                        <strong>Email:</strong> info@avto-podbor.ru
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Следите за нами</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">VContact</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">Telegram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 Подбор автомобилей. Все права защищены.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- JavaScript подключается внизу страницы -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
